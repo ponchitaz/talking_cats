@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Котячий писк</string>
+    <string name="userText">Напиши что-нибудь</string>
+    <string name="mainLabel">Что должен сказать котик?</string>
+    <string name="talkLabel">Котик говорит:</string>
+    <string name="catWords">Слова котика</string>
+    <string name="catpic">котик</string>
+    <string name="activityAnswer">Сказать тут!</string>
+    <string name="mailAnswer">Послать по почте!</string>
+    <string name="mailAlert">Кто получит письмо?</string>
+    <string name="emailInputHint">Введи адрес</string>
+    <string name="sendBtn">Отправить</string>
+    <string name="cancelBtn">Отмена</string>
+    <string name="emailTitle">Привет, да, это кот</string>
+    <string name="popUpToSend">Отправляем...</string>
+    <string name="aboutCatsBtn">О говорящих котиках</string>
+    <string name="catsInfo">Говорящие котики</string>
+    <string name="catsText">Бла-бла-бла</string>
+    <string name="magicText">Котики могут говорить и становиться вкусняшками ^___^</string>
+
+</resources>
