@@ -2,6 +2,8 @@ package io.ponchitaz.my1staaproject;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
     Button sendToMail;
     Button aboutCats;
 //    private String mailAddress = "";
+
+    @Nullable
+    private MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,17 +47,35 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View view) {
             switch (view.getId()) {
                 case R.id.aboutCatsBtn:
+                    if (mediaPlayer != null) {
+                        mediaPlayer.stop();
+                    }
+                    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.cat_meow_2);
+                    mediaPlayer.start();
+
                     Intent catInfo = new Intent(MainActivity.this, CatHome.class);
                     startActivity(catInfo);
                     break;
 
                 case R.id.sayHere:
+                    if (mediaPlayer != null) {
+                        mediaPlayer.stop();
+                    }
+                    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.cat_hissing);
+                    mediaPlayer.start();
+
                     Intent intent = new Intent(MainActivity.this, CatTalks.class);
                     intent.putExtra("catSays", userText.getText().toString());
                     startActivity(intent);
                     break;
 
                 case R.id.sendMsg:
+                    if (mediaPlayer != null) {
+                        mediaPlayer.stop();
+                    }
+                    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.cat_sad);
+                    mediaPlayer.start();
+
                     final Intent mailCat = new Intent(Intent.ACTION_SEND);
                     mailCat.setType("plain/text");
 
@@ -114,5 +137,13 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     };
+    @Override
+    protected void onDestroy() {
+        if (mediaPlayer != null) {
+            mediaPlayer.stop();
+            mediaPlayer = null;
+        }
+        super.onDestroy();
+    }
 }
 

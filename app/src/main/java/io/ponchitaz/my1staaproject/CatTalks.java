@@ -1,6 +1,8 @@
 package io.ponchitaz.my1staaproject;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +13,9 @@ public class CatTalks extends AppCompatActivity {
 
     TextView catWords;
     Button aboutCats;
+
+    @Nullable
+    private MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +34,22 @@ public class CatTalks extends AppCompatActivity {
     private View.OnClickListener ActionListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            if (mediaPlayer != null) {
+                mediaPlayer.stop();
+            }
+            mediaPlayer = MediaPlayer.create(CatTalks.this, R.raw.cat_meow_2);
+            mediaPlayer.start();
+
             Intent catInfo = new Intent(CatTalks.this, CatHome.class);
             startActivity(catInfo);
         }
     };
+    @Override
+    protected void onDestroy() {
+        if (mediaPlayer != null) {
+            mediaPlayer.stop();
+            mediaPlayer = null;
+        }
+        super.onDestroy();
+    }
 }

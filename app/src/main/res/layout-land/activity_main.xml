@@ -53,7 +53,7 @@
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="12dp"
-        android:contentDescription="@string/catpic"
+        android:contentDescription="@string/catPic"
         app:layout_constraintBottom_toTopOf="@+id/aboutCatsBtn"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"

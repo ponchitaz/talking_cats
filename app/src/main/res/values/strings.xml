@@ -3,18 +3,15 @@
     <string name="userText">Type here smth</string>
     <string name="talkLabel">So the cat says:</string>
     <string name="catWords">Here are the cat words</string>
-    <string name="catpic">catPic</string>
+    <string name="catPic">catPic</string>
     <string name="activityAnswer">Say it in the app!</string>
     <string name="mailAnswer">Send it via e-mail!</string>
-    <string name="mailAlert">Who should get the message?</string>
-    <string name="emailInputHint">Enter an e-mail</string>
-    <string name="sendBtn">Send</string>
-    <string name="cancelBtn">Cancel</string>
     <string name="mainLabel">What should the cat say?</string>
-    <string name="emailTitle">Hello, yes, this is cat</string>
-    <string name="popUpToSend">Sending...</string>
     <string name="aboutCatsBtn">About talking cats</string>
     <string name="catsInfo">Talking cats</string>
     <string name="catsText">blah-blah-blah</string>
     <string name="magicText">Cats can talk and become yummies as well ^___^</string>
+    <string name="toTheCatsListBtn">Our cats</string>
+    <string name="catName">*here is the cat name*</string>
+
 </resources>
