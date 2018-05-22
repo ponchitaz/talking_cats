@@ -2,18 +2,17 @@ package io.ponchitaz.my1staaproject;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 
-public class CatHome extends AppCompatActivity {
+public class ThreadsMain extends AppCompatActivity {
 
-    Button listOfCats;
-    FloatingActionButton catPaw;
-
+    ImageButton threadCat;
+    ImageButton asyncCat;
 
     @Nullable
     private MediaPlayer mediaPlayer;
@@ -22,43 +21,42 @@ public class CatHome extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cat_home);
+        setContentView(R.layout.activity_threads_main);
 
-        listOfCats = (Button) findViewById(R.id.to_the_cats_list_btn);
-        catPaw = (FloatingActionButton) findViewById(R.id.pawBtn);
+        threadCat = (ImageButton) findViewById(R.id.threadsForCats);
+        asyncCat = (ImageButton) findViewById(R.id.asyncForHaters);
 
-        listOfCats.setOnClickListener(ActionListener);
-        catPaw.setOnClickListener(ActionListener);
-
+        threadCat.setOnClickListener(ActionListener);
+        asyncCat.setOnClickListener(ActionListener);
     }
+
     private View.OnClickListener ActionListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             switch (view.getId()) {
-                case R.id.aboutCatsBtn:
+                case R.id.asyncForHaters:
                     if (mediaPlayer != null) {
                         mediaPlayer.stop();
                     }
-                    mediaPlayer = MediaPlayer.create(CatHome.this, R.raw.cat_meow_2);
+                    mediaPlayer = MediaPlayer.create(ThreadsMain.this, R.raw.cat_meow_2);
                     mediaPlayer.start();
 
-                    Intent catList = new Intent(CatHome.this, CatList.class);
-                    startActivity(catList);
+                    Intent catRunThread = new Intent(ThreadsMain.this, CatRunAsyncTask.class);
+                    startActivity(catRunThread);
                     break;
-                case R.id.pawBtn:
+
+                case R.id.threadsForCats:
                     if (mediaPlayer != null) {
                         mediaPlayer.stop();
                     }
-                    mediaPlayer = MediaPlayer.create(CatHome.this, R.raw.cat_meow);
+                    mediaPlayer = MediaPlayer.create(ThreadsMain.this, R.raw.cat_meow);
                     mediaPlayer.start();
 
-                    Intent catThread = new Intent(CatHome.this, ThreadsMain.class);
-                    startActivity(catThread);
+                    Intent catRunAsync = new Intent(ThreadsMain.this, CatRunThread.class);
+                    startActivity(catRunAsync);
                     break;
 
             }
-
-
         }
     };
     @Override
@@ -70,3 +68,4 @@ public class CatHome extends AppCompatActivity {
         super.onDestroy();
     }
 }
+

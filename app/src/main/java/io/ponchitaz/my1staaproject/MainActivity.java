@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     Button sendToActivity;
     Button sendToMail;
     Button aboutCats;
+    FloatingActionButton catPaw;
 //    private String mailAddress = "";
 
     @Nullable
@@ -35,10 +37,12 @@ public class MainActivity extends AppCompatActivity {
         sendToActivity = (Button) findViewById(R.id.sayHere);
         sendToMail = (Button) findViewById(R.id.sendMsg);
         aboutCats = (Button) findViewById(R.id.aboutCatsBtn);
+        catPaw = (FloatingActionButton) findViewById(R.id.pawBtn);
 
         sendToActivity.setOnClickListener(ActionListener);
         sendToMail.setOnClickListener(ActionListener);
         aboutCats.setOnClickListener(ActionListener);
+        catPaw.setOnClickListener(ActionListener);
 
     }
 
@@ -55,6 +59,17 @@ public class MainActivity extends AppCompatActivity {
 
                     Intent catInfo = new Intent(MainActivity.this, CatHome.class);
                     startActivity(catInfo);
+                    break;
+
+                case R.id.pawBtn:
+                    if (mediaPlayer != null) {
+                        mediaPlayer.stop();
+                    }
+                    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.cat_meow);
+                    mediaPlayer.start();
+
+                    Intent catThread = new Intent(MainActivity.this, ThreadsMain.class);
+                    startActivity(catThread);
                     break;
 
                 case R.id.sayHere:

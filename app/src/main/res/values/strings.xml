@@ -13,5 +13,14 @@
     <string name="magicText">Cats can talk and become yummies as well ^___^</string>
     <string name="toTheCatsListBtn">Our cats</string>
     <string name="catName">*here is the cat name*</string>
-
+    <string name="threadsMainTitle">How should a cat run?</string>
+    <string name="btnForAsync">Using AsyncTask</string>
+    <string name="btnForThreads">Using Threads</string>
+    <string name="createBtn">Create</string>
+    <string name="startBtn">Start</string>
+    <string name="cancelBtn">Cancel</string>
+    <string name="catWaySoFar">*cat progress...*</string>
+    <string name="catInterrupted">The cat was interrupted :(</string>
+    <string name="toastAboutCatCreationAsync">Async-create a cat first!</string>
+    <string name="toastAboutCatCreationThread">Thread-create a cat first!</string>
 </resources>

@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="io.ponchitaz.my1staaproject">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -32,7 +32,7 @@
         </activity>
         <activity android:name=".CatHome">
             <intent-filter>
-        <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
         <activity android:name=".CatList">
@@ -40,6 +40,9 @@
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
+        <activity android:name=".ThreadsMain" />
+        <activity android:name=".CatRunThread" />
+        <activity android:name=".CatRunAsyncTask"></activity>
     </application>
 
 </manifest>

@@ -14,6 +14,16 @@
     <string name="magicText">Котики могут говорить и становиться вкусняшками ^___^</string>
     <string name="toTheCatsListBtn">Наши котики</string>
     <string name="catName">*котиково имячко*</string>
-
+    <string name="threadsMainTitle">Как котейке лучше бегать?</string>
+    <string name="btnForAsync">Под AsyncTask</string>
+    <string name="btnForThreads">Под Threads</string>
+    <string name="createBtn">Создать</string>
+    <string name="startBtn">Начать</string>
+    <string name="cancelBtn">Прервать</string>
+    <string name="catWaySoFar">*котик бежит...*</string>
+    <string name="catWorkIsDone">Котейка отработал!</string>
+    <string name="catInterrupted">Котейку прервали :(</string>
+    <string name="toastAboutCatCreationAsync">Котейку еще надо асинхронно собрать!</string>
+    <string name="toastAboutCatCreationThread">Котейку еще надо потоково собрать!</string>
 
 </resources>
