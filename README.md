@@ -17,3 +17,7 @@ Tasks:
 
 4. Create an activity with RecyclerView, showing a list of cat photos; pressing any photo in list plays the cat meow sound. Mind the portrait and landscape leyouts. 
 --> Done; also added cat sounds on every button (just for fun).
+
+5. Working with threads:
+Create an activity with two buttons: for AsyncTask activity and for Threads activity. Add two more activities to open after any of the buttons is pressed. Each of the opening activities has three buttons: "Create", "Start", "Cancel" and a text field. Both perform the same operation, but the implementation is different. Upon execution, the task, on a worker thread (on the background) counts from 1 to 10. From each number it writes it to the TextView and then sleeps for 500 milliseconds. When it gets to the end of the count (if wasn’t cancelled) it writes “Done!”. AsyncTask Activity performs the above with an AsyncTask primitive. The Threads Activity performs the same thing with your implementation to AsyncTask, using Java threads and Handler to communicate with the Main Thread.
+--> Done; added a floating action button on other activities to get to the threads chooser activity.
